@@ -12,8 +12,23 @@ to send logs to CloudWatch.
 
 As a VPC network has a number of elements 
 
-
 ```
 cd step1 
-aws cloudformation deploy --template-file ./vpc-template.yaml --stack-name "meetup-vpc"
+aws cloudformation deploy --template-file ./vpc-template.yaml \
+    --stack-name "meetup-vpc" \
+    --region ap-southeast-2
 ```
+
+VPC Template was built to work specifically with Sydney region. 
+Upon successfull operation you should be greeted with following message
+
+```
+Waiting for changeset to be created..
+Waiting for stack create/update to complete
+Successfully created/updated stack - meetup-vpc
+```
+
+#### Enabling DNS traffic logging
+
+... TBD
+
