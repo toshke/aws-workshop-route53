@@ -1,0 +1,160 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.100.0.0/16
+      EnableDnsHostnames: true
+      EnableDnsSupport: true
+      InstanceTenancy: default
+      Tags:
+      - Key: automation
+        Value: cfhighlander
+      - Key: Name
+        Value: simple-vpc
+  Gateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+      - Key: automation
+        Value: cfhighlander
+      - Key: Name
+        Value: gatewaysimple-vpc
+  GatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId:
+        Ref: VPC
+      InternetGatewayId:
+        Ref: Gateway
+  PublicA:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: VPC
+      AvailabilityZone: ap-southeast-2a
+      CidrBlock: 10.100.0.0/24
+      MapPublicIpOnLaunch: false
+      Tags:
+      - Key: Name
+        Value: simple-vpc-PublicA
+  PublicB:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: VPC
+      AvailabilityZone: ap-southeast-2b
+      CidrBlock: 10.100.1.0/24
+      MapPublicIpOnLaunch: false
+      Tags:
+      - Key: Name
+        Value: simple-vpc-PublicB
+  PublicC:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: VPC
+      AvailabilityZone: ap-southeast-2c
+      CidrBlock: 10.100.2.0/24
+      MapPublicIpOnLaunch: false
+      Tags:
+      - Key: Name
+        Value: simple-vpc-PublicC
+  PrivateA:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: VPC
+      AvailabilityZone: ap-southeast-2a
+      CidrBlock: 10.100.3.0/24
+      MapPublicIpOnLaunch: false
+      Tags:
+      - Key: Name
+        Value: simple-vpc-PrivateA
+  PrivateB:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: VPC
+      AvailabilityZone: ap-southeast-2b
+      CidrBlock: 10.100.4.0/24
+      MapPublicIpOnLaunch: false
+      Tags:
+      - Key: Name
+        Value: simple-vpc-PrivateB
+  PrivateC:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: VPC
+      AvailabilityZone: ap-southeast-2c
+      CidrBlock: 10.100.5.0/24
+      MapPublicIpOnLaunch: false
+      Tags:
+      - Key: Name
+        Value: simple-vpc-PrivateC
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:
+        Ref: VPC
+      Tags:
+      - Key: Name
+        Value: simple-vpc-publicrt
+  PublicRoute:
+    Type: AWS::EC2::Route
+    Properties:
+      GatewayId:
+        Ref: Gateway
+      DestinationCidrBlock: 0.0.0.0/0
+      RouteTableId:
+        Ref: PublicRouteTable
+  PublicRTAssociations0:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId:
+        Ref: PublicA
+      RouteTableId:
+        Ref: PublicRouteTable
+  PublicRTAssociations1:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId:
+        Ref: PublicB
+      RouteTableId:
+        Ref: PublicRouteTable
+  PublicRTAssociations2:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId:
+        Ref: PublicC
+      RouteTableId:
+        Ref: PublicRouteTable
+Outputs:
+  PublicA:
+    Value:
+      Ref: PublicA
+  PublicB:
+    Value:
+      Ref: PublicB
+  PublicC:
+    Value:
+      Ref: PublicC
+  PrivateA:
+    Value:
+      Ref: PrivateA
+  PrivateB:
+    Value:
+      Ref: PrivateB
+  PrivateC:
+    Value:
+      Ref: PrivateC
+  VpcId:
+    Value:
+      Ref: VPC
+  CfTemplateUrl:
+    Value: "/simple-vpc.compiled.yaml"
+  CfTemplateVersion:
+    Value: latest
+Description: simple-vpc@latest - vlatest

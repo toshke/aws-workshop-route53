@@ -12,3 +12,8 @@ to send logs to CloudWatch.
 
 As a VPC network has a number of elements 
 
+
+```
+cd step1 
+aws cloudformation deploy --template-file ./vpc-template.yaml --stack-name "meetup-vpc"
+```
