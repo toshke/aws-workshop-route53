@@ -1,6 +1,15 @@
-## Step 2 - Red team on the move
+## Step 2 - Deploy EC2 instance, monitor DNS traffic
 
 
-- Deploy vulnerable lambda (SSRF) into VPC
-- Execute malicious cURL (via Gateway)
-- Check the logs for DNS lookup of malicious lookup
+#### Create SSH key
+
+#### Deploy the instance
+
+#### Monitor the traffic
+
+#### Login to instance, generate some user traffic 
+
+#### Inspect the user generated traffic
+
+
+[Proceed to step3 to block unwanted traffic](../step3/README.md)
