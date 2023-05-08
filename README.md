@@ -14,3 +14,5 @@ AWS Route53 Workshop - monitoring and filtering
 ## Common mistakes
 
 - User not in the correct AWS region
+
+[Kick off the workshop by going to step1](step1/README.md)
