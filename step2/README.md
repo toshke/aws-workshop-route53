@@ -83,12 +83,14 @@ Jump to [CloudWatch console](https://ap-southeast-2.console.aws.amazon.com/cloud
 Once you are presented with the list of the VPC Query logging log streams, search for your instance id
 using filter text box - you can inspect the log entries for your instance. 
 
+
+*List of all log streams, filtered by the instance id*
 <img width="1125" alt="Screenshot 2023-05-08 at 9 56 42 pm" src="https://user-images.githubusercontent.com/1170273/236818720-637341a0-74b0-47a4-9245-6ccc5a155c5f.png">
 
-List of all log streams, filtered by the instance id
 
+
+*Details of CNAME lookup for a S3 bucket performed during the instance boot*
 <img width="821" alt="Screenshot 2023-05-08 at 10 00 57 pm" src="https://user-images.githubusercontent.com/1170273/236818694-f1c1a6d0-ff18-49c2-9df8-ab66fd9c1f1b.png">
-Details of CNAME lookup for a S3 bucket performed during the instance boot
 
 
 
