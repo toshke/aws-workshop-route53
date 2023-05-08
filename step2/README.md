@@ -78,7 +78,7 @@ aws ec2 run-instances --image-id $amiid --subnet-id $subnetid --security-group-i
 
 Instance ID should apppear in the list of the Query logging CloudWatch streams you saw in step1. 
 
-Jump to [CloudWatch console], navigate to "Logs / Log groups", and filter for "/aws/route53/meetup"
+Jump to [CloudWatch console](https://ap-southeast-2.console.aws.amazon.com/cloudwatch/home?region=ap-southeast-2#home), navigate to "Logs / Log groups", and filter for "/aws/route53/meetup"
 
 Once you are presented with the list of the VPC Query logging log streams, search for your instance id
 using filter text box - you can inspect the log entries for your instance. 
