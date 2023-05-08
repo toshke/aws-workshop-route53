@@ -53,7 +53,7 @@ default DNS resolvers.
   <img width="823" alt="Screenshot 2023-05-07 at 10 33 11 pm" src="https://user-images.githubusercontent.com/1170273/236677897-5bdde9e2-1e9f-4e06-8abe-78f1d97f9752.png">
 
 4 - Click *Add VPC* button to select previously created VPC, 
-    select **Simple VPC**, click "Add" button
+    select **simple vpc**, click "Add" button
 
 5 - *(Optional)* add "purpose=aws-workshop" tag 
 

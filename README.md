@@ -6,4 +6,11 @@ AWS Route53 Workshop - monitoring and filtering
 
 - Computer with a working internet connection
 - AWS Account 
-- AWS CLI - [install instrunctions](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) 
+- AWS CLI v2 - [install instrunctions](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+- Bash or ZSH scripting environment  (Instrunctions are tested with BASH)
+- `ssh` 
+- Optional `jq` and `curl`
+
+## Common mistakes
+
+- User not in the correct AWS region
