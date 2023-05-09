@@ -16,3 +16,15 @@ AWS Route53 Workshop - monitoring and filtering
 - User not in the correct AWS region
 
 [Kick off the workshop by going to step1](step1/README.md)
+
+
+## Cleanup 
+
+To remove the resources created in this workshop
+
+[Go to route53 dns firewall rule groups console](https://ap-southeast-2.console.aws.amazon.com/route53resolverdnsfirewall/home?region=ap-southeast-2#/rulegroup/), delete each rule in the group, 
+dissaciate from VPC, and delete the group
+
+[Go to route53 dns firewall domain lists console](https://ap-southeast-2.console.aws.amazon.com/route53resolverdnsfirewall/home?region=ap-southeast-2#/domainlist/) and remove created domain list. 
+
+TBD : Clean up instance and VPC
