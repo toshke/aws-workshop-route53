@@ -27,4 +27,10 @@ dissaciate from VPC, and delete the group
 
 [Go to route53 dns firewall domain lists console](https://ap-southeast-2.console.aws.amazon.com/route53resolverdnsfirewall/home?region=ap-southeast-2#/domainlist/) and remove created domain list. 
 
+[Terminate the instance you have created from ec2 console]()
+
+[Go to CloudFormation and delete the meetup-vpc stack](https://ap-southeast-2.console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks?filteringText=&filteringStatus=active&viewNested=true)
+
+
+
 TBD : Clean up instance and VPC

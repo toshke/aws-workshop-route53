@@ -111,6 +111,7 @@ a connection with the domain list. For demonstration purposes we will return emp
 response for the DNS lookups for domains on the list
 
 ```
+# (executed from your workstation, not the ec2 instance)
 fgid=$( aws route53resolver list-firewall-rule-groups  --query "FirewallRuleGroups[?Name=='meetup-workshop-rg'][].Id" --output text)
 dlid=$(aws route53resolver list-firewall-domain-lists --query "FirewallDomainLists[?Name == 'aws-meetup-workshop-dl'][].Id" --output text)
 
@@ -124,6 +125,12 @@ Repeat the instrunctions from step 3. You should be met with following
 response 
 
 ```
+instance_ip=$(aws ec2 describe-instances --filters Name=instance-state-name,Values=running Name=key-name,Values=workshop-route53-key --query 'Reservations[0].Instances[0].PublicIpAddress' --output text)
+
+# login to instance
+ssh -i step2/workshop.key "ec2-user@${instance_ip}" 
+
+
 [ec2-user@ip-10-100-0-18 ~]$ nslookup threat.actor
 Server:		10.100.0.2
 Address:	10.100.0.2#53
